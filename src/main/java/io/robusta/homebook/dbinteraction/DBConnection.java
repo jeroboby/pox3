@@ -10,7 +10,7 @@ public class DBConnection {
 		try
 		{
 			Class.forName( "com.mysql.jdbc.Driver" );
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/homedb", "root", "" );
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/homebookdb", "root", "" );
 		}
 		catch( ClassNotFoundException e )
 		{
@@ -18,13 +18,16 @@ public class DBConnection {
 		}
 		catch (SQLException e) {
 			// TODO Auto-generated catch block
-			throw new RuntimeException("Pb with connection");
+			e.printStackTrace();
 		}
 		
 	}
 	
-	public String find() throws SQLException{
-		Statement statement = conn.createStatement();
+	public String find() {
+		Statement statement;
+		try {
+			statement = conn.createStatement();
+	
 		ResultSet rs = statement.executeQuery( "SELECT * from homes" );
 
 		while( rs.next() )
@@ -35,6 +38,13 @@ public class DBConnection {
 		}
 		conn.close();
 		return "ok";
+		
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 	
 }

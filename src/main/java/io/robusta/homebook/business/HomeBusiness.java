@@ -7,8 +7,6 @@ import java.util.List;
 public class HomeBusiness {
 
 
-
-
 	public Home findById(long id) {
 
 
@@ -23,13 +21,6 @@ public class HomeBusiness {
 		return null;
 
 	}
-
-
-
-
-
-
-
 
 
 
