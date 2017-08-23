@@ -3,17 +3,14 @@ package io.robusta.homebook.api;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 
-
-@Path("homes")
-public class HomeResource {
-
+@Path("cities")
+public class CityWS {
 	
-
 	@Path("test")
 	@GET
-	public String test(){
+	public String test() {
 		return "test";
 	}
 	
-
+	
 }
