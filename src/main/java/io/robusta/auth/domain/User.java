@@ -1,4 +1,4 @@
-package io.robusta.domain;
+package io.robusta.auth.domain;
 
 public interface User {
 

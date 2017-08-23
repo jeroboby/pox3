@@ -1,6 +1,6 @@
-package io.robusta.business;
+package io.robusta.auth.business;
 
-import io.robusta.domain.User;
+import io.robusta.auth.domain.User;
 
 public class UserBusiness {
 
