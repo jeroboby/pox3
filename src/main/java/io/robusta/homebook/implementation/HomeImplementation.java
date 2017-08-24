@@ -1,6 +1,8 @@
 package io.robusta.homebook.implementation;
 
-public class HomeImplementation {
+import io.robusta.homebook.domain.Home;
+
+public class HomeImplementation implements Home {
 
 	String id;
 	CityImplementation city;
@@ -8,13 +10,18 @@ public class HomeImplementation {
 	int price;
 	
 	
-
-	public HomeImplementation(String id, String adress, CityImplementation city, int surface, int price) {
-		this.id = id;
+	public HomeImplementation(CityImplementation city, int surface, int price) {
 		this.city = city;
 		this.surface = surface;
 		this.price = price;
 	}
+
+	public HomeImplementation(String id, CityImplementation city, int surface, int price) {
+		this(city,surface,price);
+		this.id = id;
+	}
+	
+	
 
 	public String getId() {
 		return id;

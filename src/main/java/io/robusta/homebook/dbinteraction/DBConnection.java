@@ -1,6 +1,17 @@
 package io.robusta.homebook.dbinteraction;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import io.robusta.homebook.domain.City;
+import io.robusta.homebook.domain.Home;
+import io.robusta.homebook.implementation.CityImplementation;
+import io.robusta.homebook.implementation.HomeImplementation;
 
 public class DBConnection {
 
@@ -23,21 +34,26 @@ public class DBConnection {
 		
 	}
 	
-	public String find() {
+	public List<City> find() {
 		Statement statement;
 		try {
 			statement = conn.createStatement();
 	
-		ResultSet rs = statement.executeQuery( "SELECT * from homes" );
-
-		while( rs.next() )
-		{
-			int id = rs.getInt( "id" );
-			String adress = rs.getString( "adress" );
+			ResultSet rs = statement.executeQuery( "SELECT * from cities" );
 			
-		}
-		conn.close();
-		return "ok";
+			List<City> cities = new ArrayList<City>();
+
+			
+			while( rs.next() )
+			{
+				
+				int zipCode = rs.getInt("zip_code");
+				String name = rs.getString("name");
+				City city = new CityImplementation(zipCode, name);
+				cities.add(city);
+			}
+			conn.close();
+			return cities;
 		
 		
 		} catch (SQLException e) {

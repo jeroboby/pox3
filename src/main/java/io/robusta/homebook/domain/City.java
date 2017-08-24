@@ -6,6 +6,6 @@ package io.robusta.homebook.domain;
 public interface City {
 
     String getName();
-    String getZipCode();
+    int getZipCode();
     String getCountry();
 }
