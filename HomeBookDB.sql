@@ -10,7 +10,7 @@ create table `cities` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 create table `homes` (
-	`id` VARCHAR(50) NOT NULL,
+	`id` INT,
     `zip_code` INT,
 	`surface` INT,
     `price` INT,
@@ -25,5 +25,5 @@ create table `counties` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 INSERT into `cities` VALUES (66666,"CityExample");
-INSERT into `homes` VALUES ("azertyuiop",66666,666,666);
+INSERT into `homes` VALUES (48258,66666,666,666);
 INSERT into `counties` VALUES (66,"CountyExample");
