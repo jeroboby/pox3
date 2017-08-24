@@ -3,10 +3,7 @@ package io.robusta.auth.business;
 import io.robusta.auth.business.UserBusiness;
 import io.robusta.auth.dao.MySQLDatabaseConnection;
 import io.robusta.auth.domain.User;
-import org.jboss.arquillian.container.test.api.Deployment;
-import org.jboss.shrinkwrap.api.ShrinkWrap;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -21,6 +18,7 @@ import static org.junit.Assert.assertEquals;
 
 public class UserBusinessTest {
 
+    /*
     @Deployment
     public static JavaArchive createDeployment() {
         return ShrinkWrap.create(JavaArchive.class)
@@ -30,6 +28,7 @@ public class UserBusinessTest {
                 .addClass(io.robusta.auth.business.UserBusiness.class)
                 .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
     }
+    */
 
     MySQLDatabaseConnection databaseConnection = new MySQLDatabaseConnection();
     private Connection connection= databaseConnection.getConnection();
