@@ -10,6 +10,7 @@ public class HomeImplementation implements Home {
 	int price;
 	
 	
+
 	public HomeImplementation(CityImplementation city, int surface, int price) {
 		this.city = city;
 		this.surface = surface;
