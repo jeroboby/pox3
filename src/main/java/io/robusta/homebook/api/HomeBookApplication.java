@@ -23,7 +23,6 @@ public class HomeBookApplication extends Application
 		Set<Class<?>> result = new HashSet<>();
 		result.add( CityWS.class);
 		result.add( HomeWS.class );
-		result.add( TestWS.class );
 		return result;
 	}
 }
