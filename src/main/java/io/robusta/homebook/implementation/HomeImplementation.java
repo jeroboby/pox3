@@ -4,12 +4,10 @@ import io.robusta.homebook.domain.Home;
 
 public class HomeImplementation implements Home {
 
-	String id;
+	int id;
 	CityImplementation city;
 	int surface;
 	int price;
-	
-	
 
 	public HomeImplementation(CityImplementation city, int surface, int price) {
 		this.city = city;
@@ -17,18 +15,16 @@ public class HomeImplementation implements Home {
 		this.price = price;
 	}
 
-	public HomeImplementation(String id, CityImplementation city, int surface, int price) {
-		this(city,surface,price);
+	public HomeImplementation(int id, CityImplementation city, int surface, int price) {
+		this(city, surface, price);
 		this.id = id;
 	}
-	
-	
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

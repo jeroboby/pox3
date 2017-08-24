@@ -2,7 +2,10 @@ package io.robusta.homebook.domain;
 
 public interface Home {
 
-	String getId();
+	int getId();
+	
+	int getSurface();
+	int getPrice();
 
 
 }
