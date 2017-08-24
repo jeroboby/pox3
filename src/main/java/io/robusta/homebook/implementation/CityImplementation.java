@@ -1,17 +1,14 @@
 package io.robusta.homebook.implementation;
 
-import java.util.List;
-
 public class CityImplementation {
 	int zipCode;
 	String name;
-	List<HomeImplementation> homes;
+	//List<HomeImplementation> homes;
 
 
-	public CityImplementation(int zipCode, String name, List<HomeImplementation> homes) {
+	public CityImplementation(int zipCode, String name) {
 		this.zipCode = zipCode;
 		this.name = name;
-		this.homes = homes;
 	}
 
 	public int getZipCode() {
@@ -30,12 +27,12 @@ public class CityImplementation {
 		this.name = name;
 	}
 
-	public List<HomeImplementation> getHomes() {
+/*	public List<HomeImplementation> getHomes() {
 		return homes;
 	}
 
 	public void setHomes(List<HomeImplementation> homes) {
 		this.homes = homes;
-	}
+	}*/
 
 }

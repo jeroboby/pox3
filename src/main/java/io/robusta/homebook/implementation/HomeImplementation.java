@@ -9,7 +9,7 @@ public class HomeImplementation {
 	
 	
 
-	public HomeImplementation(String id, String adress, CityImplementation city, int surface, int price) {
+	public HomeImplementation(String id, CityImplementation city, int surface, int price) {
 		this.id = id;
 		this.city = city;
 		this.surface = surface;

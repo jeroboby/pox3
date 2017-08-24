@@ -1,6 +1,7 @@
 package io.robusta.homebook.business;
 
 import io.robusta.homebook.domain.Home;
+import io.robusta.homebook.implementation.HomeImplementation;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class HomeBusiness {
 	}
 	
 	
-	public List<Home> findByCity(String city, String zipCode) {
+	public List<HomeImplementation> findByCity(String city, int zipCode) {
 
 
 		return null;
