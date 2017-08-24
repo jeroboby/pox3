@@ -87,7 +87,7 @@ public class HomeBusiness {
 		}
 	}
 
-	public List<Home> findByCity(String city, int zipCode) {
+	public List<HomeImplementation> findByCity(String city, int zipCode) {
 
 		return null;
 

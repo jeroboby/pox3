@@ -37,7 +37,7 @@ public class HomeWS {
 	public HomeImplementation createNewHome(HomeImplementation home){
 		city.setName("toulouse");
 		city.setZipCode(31000);
-		home.setId("tul");
+		home.setId(012345);
 		home.setCity(city);
 		home.setPrice(6525);
 		home.setSurface(65);
