@@ -2,6 +2,7 @@ package io.robusta.homebook.business;
 
 import io.robusta.homebook.domain.City;
 import io.robusta.homebook.domain.Home;
+
 import io.robusta.homebook.implementation.CityImplementation;
 import io.robusta.homebook.implementation.HomeImplementation;
 
@@ -12,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 import java.util.List;
 
 public class HomeBusiness {
@@ -85,7 +87,7 @@ public class HomeBusiness {
 		}
 	}
 
-	public List<Home> findByCity(String city, String zipCode) {
+	public List<Home> findByCity(String city, int zipCode) {
 
 		return null;
 

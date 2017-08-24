@@ -52,5 +52,4 @@ public class HomeImplementation implements Home {
 		this.price = price;
 	}
 
-	
 }

@@ -1,5 +1,6 @@
 package io.robusta.homebook.implementation;
 
+
 import java.util.List;
 
 import io.robusta.homebook.domain.City;
@@ -10,14 +11,17 @@ public class CityImplementation implements City {
 	String name;
 	List<Home> homes;
 
+
 	public CityImplementation(int zipCode, String name) {
 		this.zipCode = zipCode;
 		this.name = name;
+
 	}
 	
 	public CityImplementation(int zipCode, String name, List<Home> homes) {
 		this(zipCode,name);
 		this.homes = homes;
+
 	}
 
 	public int getZipCode() {
@@ -36,13 +40,19 @@ public class CityImplementation implements City {
 		this.name = name;
 	}
 
+
+/*	public List<HomeImplementation> getHomes() {
+
 	public List<Home> getHomes() {
+
 		return homes;
 	}
 
 	public void setHomes(List<Home> homes) {
 		this.homes = homes;
-	}
+
+	}*/
+
 	
 	public void addHomes(Home home) {
 		this.homes.add(home);
@@ -55,5 +65,6 @@ public class CityImplementation implements City {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

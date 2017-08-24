@@ -1,51 +1,60 @@
 package io.robusta.homebook.business;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
-import java.sql.SQLException;
-
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import io.robusta.homebook.domain.City;
+import io.robusta.homebook.implementation.CityImplementation;
 
 public class CityBusinessTest {
 
 	CityBusiness cityConn;
 	
+	// NOTE : reset DB before running tests.
+	
 	@Before
-	public void setUp(){
+	public void setUp() {
 
-			try {
-				cityConn = new CityBusiness();
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
+		cityConn = new CityBusiness();
+
 	}
 	
-
+	@After
+	public void after(){
+		cityConn.close();
+	}
 
 	@Test
 	public void testFindAll() {
-		assertEquals(1,cityConn.findAll().size());
+		assertTrue(cityConn.findAll().size() > 0);
 	}
 
 	@Test
 	public void testFindByZipCode() {
-		assertEquals("CityExample",cityConn.findByZipCode(66666).getName());
+		assertEquals("CityExample", cityConn.findByZipCode(66666).getName());
 	}
 
 	@Test
-	public void testFindByCity() {
-		fail("Not yet implemented");
+	public void testAddCity() {
+		City city = new CityImplementation(31000, "Toulouse");
+		cityConn.addCity(city);
+
+		assertEquals(2, cityConn.findAll().size());
 	}
 
 	@Test
 	public void testUpdateCity() {
-		fail("Not yet implemented");
+		City city = new CityImplementation(42000, "Saint Etienne");
+		cityConn.addCity(city);
+		assertEquals("Saint Etienne", cityConn.findByZipCode(42000).getName());
+		city = new CityImplementation(42000, "Qui c'est les plus forts évidement c'est les verts");
+		cityConn.updateCity(city);
+		assertEquals("Qui c'est les plus forts évidement c'est les verts", cityConn.findByZipCode(42000).getName());
 	}
 
 	@Test
@@ -53,5 +62,4 @@ public class CityBusinessTest {
 		fail("Not yet implemented");
 	}
 
-	
 }
