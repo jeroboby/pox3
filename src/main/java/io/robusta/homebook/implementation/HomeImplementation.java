@@ -52,4 +52,10 @@ public class HomeImplementation implements Home {
 		this.price = price;
 	}
 
+	/*@Override
+	public String toString() {
+		return "HomeImplementation [id=" + id + ", city=" + city + ", surface=" + surface + ", price=" + price + "]";
+	}*/
+	
+
 }
