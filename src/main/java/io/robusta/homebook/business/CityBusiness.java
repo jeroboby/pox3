@@ -12,6 +12,9 @@ import java.util.List;
 import io.robusta.homebook.domain.City;
 import io.robusta.homebook.implementation.CityImplementation;
 
+// TODO On ne ferme pas la connexion s'il y a un soucis durant
+// l'interction avec la DB.... A GERER
+
 public class CityBusiness {
 
 	Connection conn;
@@ -47,7 +50,6 @@ public class CityBusiness {
 				City city = new CityImplementation(zipCode, name);
 				cities.add(city);
 			}
-			conn.close();
 			return cities;
 
 		} catch (SQLException e) {
@@ -55,8 +57,7 @@ public class CityBusiness {
 			e.printStackTrace();
 			return null;
 		}
-		// TODO On ne ferme pas la connexion s'il y a un soucis durant
-		// l'interction avec la DB.... A GERER
+
 	}
 
 	public City findByZipCode(int zipCode) {

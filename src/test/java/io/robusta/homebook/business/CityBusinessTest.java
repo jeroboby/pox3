@@ -59,7 +59,12 @@ public class CityBusinessTest {
 
 	@Test
 	public void testDeleteCity() {
-		fail("Not yet implemented");
+		int initSize = cityConn.findAll().size();
+		City city = new CityImplementation(01234, "test");
+		cityConn.addCity(new CityImplementation(01234, "test"));
+		assertEquals(initSize+1, cityConn.findAll().size());
+		cityConn.deleteCity(city);
+		assertEquals(initSize, cityConn.findAll().size());	
 	}
 
 }
